@@ -1,0 +1,20 @@
+[project]
+name = "dyflow"
+version = "0.1.0"
+description = "App de escritorio para gestión de notas, snippets, tareas, workflows y scripts"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "lebuas"}]
+dependencies = [
+    "PySide6>=6.5.0",
+]
+
+[build-system]
+requires = ["maturin>=1.8,<2.0"]
+build-backend = "maturin"
+
+[tool.maturin]
+features = ["pyo3/extension-module"]
+module-name = "dyflow._core"
+python-source = "python"
