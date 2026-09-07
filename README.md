@@ -1,40 +1,44 @@
 # DyFlow
 
-> **⚠️ Este proyecto se encuentra en construcción. La funcionalidad y estructura pueden cambiar.**
+> **⚠️ This project is under construction. Features and structure may change.**
 
-## Descripción
+![DyFlow](assets/dyflow.png)
 
-**DyFlow** es una aplicación de escritorio para gestionar tu día a día. Administra notas rápidas, snippets de texto y código, tareas diarias, workflows y scripts con búsqueda inteligente potenciada por IA.
+## Description
 
-## Funcionalidades
+**DyFlow** is a desktop application to manage your daily workflow. Organize quick notes, code snippets, daily tasks, workflows, and scripts with intelligent search powered by AI.
 
-- **Notes** — Notas rápidas con búsqueda
-- **Snippets** — Fragmentos de texto o código reutilizables
-- **Tasks** — Gestión de tareas diarias con prioridades
-- **Workflows** — Secuencias de tareas automatizadas
-- **Scripts** — Scripts con ejecución programada (cron jobs)
-- **Búsqueda IA** — Búsqueda inteligente con IA
+## Features
 
-## Arquitectura
+- **Notes** — Quick notes with search
+- **Snippets** — Reusable text or code snippets
+- **Tasks** — Daily task management with priorities
+- **Workflows** — Automated task sequences
+- **Scripts** — Scheduled script execution (cron jobs)
+- **AI Search** — Intelligent search powered by AI
+
+## Architecture
 
 ### Frontend (PySide6) — MVC
 ```
 dyflow/
-├── models/          # Modelos de datos (dataclasses)
-├── views/           # Vistas PySide6 (UI)
-└── controllers/     # Controladores (lógica de presentación)
+├── models/          # Data models (dataclasses)
+├── ui/              # PySide6 views (UI)
+│   ├── main_window.py
+│   └── widgets/
+└── utils/           # Utilities
 ```
 
 ### Backend (Rust) — Clean Architecture
 ```
 rust/src/
-├── domain/              # Entidades y reglas de negocio
+├── domain/              # Entities and business rules
 │   ├── entities/
 │   └── errors/
-├── application/         # Servicios y DTOs
+├── application/         # Services and DTOs
 │   ├── services/
 │   └── dto/
-└── infrastructure/      # Almacenamiento y servicios externos
+└── infrastructure/      # Storage and external services
     ├── storage/
     └── ai/
 ```
@@ -43,9 +47,9 @@ rust/src/
 
 - **Frontend**: PySide6 (Qt for Python)
 - **Backend**: Rust + PyO3 + maturin
-- **UI**: Dark theme estilo sidebar con secciones
+- **UI**: Dark theme sidebar with sections
 
-## Instalación
+## Installation
 
 ```bash
 git clone git@github.com:lebuas/dyflow.git
@@ -57,12 +61,12 @@ maturin develop
 pip install PySide6
 ```
 
-## Ejecución
+## Usage
 
 ```bash
-python -m dyflow.main
+py dyflow.py
 ```
 
-## Licencia
+## License
 
 MIT
