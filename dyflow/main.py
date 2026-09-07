@@ -1,7 +1,6 @@
 import sys
 from PySide6.QtWidgets import QApplication
-from dyflow.views.main_window import MainWindow
-from dyflow.controllers import MainController
+from dyflow.ui.main_window import MainWindow
 
 
 def main():
@@ -10,9 +9,8 @@ def main():
     app.setOrganizationName("lebuas")
 
     window = MainWindow()
-    controller = MainController(window.sidebar, window.content_area)
-
     window.show()
+
     sys.exit(app.exec())
 
 
