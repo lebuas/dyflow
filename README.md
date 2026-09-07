@@ -19,7 +19,7 @@
 
 ### Frontend (PySide6) — MVC
 ```
-python/dyflow/
+dyflow/
 ├── models/          # Modelos de datos (dataclasses)
 ├── views/           # Vistas PySide6 (UI)
 └── controllers/     # Controladores (lógica de presentación)

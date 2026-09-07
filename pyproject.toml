@@ -17,4 +17,4 @@ build-backend = "maturin"
 [tool.maturin]
 features = ["pyo3/extension-module"]
 module-name = "dyflow._core"
-python-source = "python"
+
