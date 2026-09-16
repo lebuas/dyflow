@@ -4,6 +4,7 @@ import QtQuick.Controls 2.15
 ApplicationWindow {
     id: mainWindow
     visible: true
+    color: "transparent"
 
     width: 660
     height: 460
