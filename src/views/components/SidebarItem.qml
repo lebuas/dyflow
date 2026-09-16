@@ -1,5 +1,6 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
+import "../components" as Components
 
 Rectangle {
     id: root
@@ -20,7 +21,7 @@ Rectangle {
         anchors.rightMargin: 12
         spacing: 10
 
-        Icon {
+        Components.Icon {
             source: root.icon
             anchors.verticalCenter: parent.verticalCenter
         }

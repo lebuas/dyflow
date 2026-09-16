@@ -1,5 +1,6 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
+import "../components" as Components
 
 TextField {
     id: root
@@ -18,7 +19,7 @@ TextField {
         border.color: root.activeFocus ? "#6366f1" : "#374151"
         border.width: 1
 
-        Icon {
+        Components.Icon {
             source: "../resorces/icons/search.svg"
             size: 16
             anchors.left: parent.left
