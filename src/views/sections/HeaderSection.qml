@@ -10,7 +10,7 @@ Rectangle {
     signal searchChanged(string text)
     signal askAiClicked()
 
-    Row {
+    RowLayout {
         anchors.fill: parent
         anchors.leftMargin: 16
         anchors.rightMargin: 16
@@ -19,11 +19,12 @@ Rectangle {
         Components.SearchBar {
             id: searchBar
             Layout.fillWidth: true
-            anchors.verticalCenter: parent.verticalCenter
-            onTextChanged: root.searchChanged(text)
+            Layout.alignment: Qt.AlignVCenter
+            onTextChanged: function(text) { root.searchChanged(text) }
         }
 
         Rectangle {
+            Layout.alignment: Qt.AlignVCenter
             width: askAiLabel.implicitWidth + 24
             height: 40
             radius: 8
