@@ -1,5 +1,6 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
+import QtQuick.Layouts 1.15
 import "../components" as Components
 
 Rectangle {
@@ -15,7 +16,7 @@ Rectangle {
     radius: 6
     color: mouseArea.containsMouse ? "#252630" : "transparent"
 
-    Row {
+    RowLayout {
         anchors.fill: parent
         anchors.leftMargin: 12
         anchors.rightMargin: 12
@@ -23,21 +24,21 @@ Rectangle {
 
         Components.Icon {
             source: root.icon
-            anchors.verticalCenter: parent.verticalCenter
+            Layout.alignment: Qt.AlignVCenter
         }
 
         Text {
             text: root.label
             color: "#e5e7eb"
             font.pixelSize: 13
-            anchors.verticalCenter: parent.verticalCenter
+            Layout.alignment: Qt.AlignVCenter
         }
 
         Item { Layout.fillWidth: true }
 
         Row {
             spacing: 6
-            anchors.verticalCenter: parent.verticalCenter
+            Layout.alignment: Qt.AlignVCenter
 
             Text {
                 text: root.count
