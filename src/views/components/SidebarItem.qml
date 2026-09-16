@@ -23,7 +23,6 @@ Rectangle {
         Components.Icon {
             source: root.icon
             Layout.alignment: Qt.AlignVCenter
-            opacity: mouseArea.containsMouse ? 1.0 : 0.7
         }
 
         Text {

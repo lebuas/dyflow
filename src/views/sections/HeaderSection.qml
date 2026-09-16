@@ -24,28 +24,27 @@ Item {
 
         Rectangle {
             Layout.alignment: Qt.AlignVCenter
-            width: askAiLabel.implicitWidth + 24
+            width: row.implicitWidth + 16
             height: 40
-            radius: 8
             color: "transparent"
-            border.color: mouseArea.containsMouse ? "#a78bfa" : "#374151"
-            border.width: 1
 
             Row {
+                id: row
                 anchors.centerIn: parent
                 spacing: 6
 
-                Text {
-                    text: "✨"
-                    font.pixelSize: 14
+                Components.Icon {
+                    source: "../resorces/icons/ia.svg"
+                    size: 16
+                    anchors.verticalCenter: parent.verticalCenter
                 }
 
                 Text {
-                    id: askAiLabel
                     text: "Ask AI"
-                    color: "#a78bfa"
+                    color: mouseArea.containsMouse ? "#ffffff" : "#a78bfa"
                     font.pixelSize: 13
                     font.bold: true
+                    anchors.verticalCenter: parent.verticalCenter
                 }
             }
 
