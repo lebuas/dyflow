@@ -1,0 +1,9 @@
+[
+  {
+    "label": "Ejecutar dyflow (PySide6)",
+    "command": "if [ -f .venv/bin/activate ]; then .venv/bin/python src/main.py; else python3 src/main.py || python src/main.py; fi",
+    "allow_concurrent_runs": false,
+    "use_new_terminal": false,
+    "reveal": "always"
+  }
+]
