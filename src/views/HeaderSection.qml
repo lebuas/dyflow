@@ -4,7 +4,7 @@ import QtQuick.Layouts 1.15
 
 Item {
     id: root
-    height: 53
+    height: 44
 
     signal searchChanged(string text)
     signal askAiClicked()
@@ -48,8 +48,8 @@ Item {
 
         Item {
             Layout.alignment: Qt.AlignVCenter
-            width: aiRow.implicitWidth + 16
-            height: 40
+            width: aiRow.implicitWidth
+            height: 44
 
             Row {
                 id: aiRow
