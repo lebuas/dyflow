@@ -1,11 +1,10 @@
-import QtQuick
-import QtQuick.Layouts
+import QtQuick 2.15
+import QtQuick.Layouts 1.15
 import "../components" as Components
 
-Rectangle {
+Item {
     id: root
-    height: 52
-    color: "transparent"
+    height: 53
 
     signal searchChanged(string text)
     signal askAiClicked()
@@ -28,8 +27,8 @@ Rectangle {
             width: askAiLabel.implicitWidth + 24
             height: 40
             radius: 8
-            color: mouseArea.containsMouse ? "#252630" : "#1f2937"
-            border.color: "#374151"
+            color: "transparent"
+            border.color: mouseArea.containsMouse ? "#a78bfa" : "#374151"
             border.width: 1
 
             Row {
@@ -58,5 +57,12 @@ Rectangle {
                 onClicked: root.askAiClicked()
             }
         }
+    }
+
+    Rectangle {
+        anchors.bottom: parent.bottom
+        width: parent.width
+        height: 1
+        color: "#2a2b36"
     }
 }

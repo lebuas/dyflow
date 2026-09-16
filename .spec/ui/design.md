@@ -20,7 +20,7 @@ Módulos principales: Tareas, Snippets, Notas, Workflows y Scripts.
 |  [_] Scripts                                             # scripts >  |
 |                                                                       |
 |  SUPPORT                                                              |
-|  (?) Help                                                             |
+|  (?) Setting                                                             |
 |  (!) Suggestions                                                      |
 |  (X) Report a problem                                                 |
 |                                                                       |

@@ -1,5 +1,4 @@
 import QtQuick 2.15
-import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 import "../components" as Components
 
@@ -13,8 +12,7 @@ Rectangle {
     signal clicked()
 
     height: 36
-    radius: 6
-    color: mouseArea.containsMouse ? "#252630" : "transparent"
+    color: "transparent"
 
     RowLayout {
         anchors.fill: parent
@@ -25,11 +23,12 @@ Rectangle {
         Components.Icon {
             source: root.icon
             Layout.alignment: Qt.AlignVCenter
+            opacity: mouseArea.containsMouse ? 1.0 : 0.7
         }
 
         Text {
             text: root.label
-            color: "#e5e7eb"
+            color: mouseArea.containsMouse ? "#ffffff" : "#e5e7eb"
             font.pixelSize: 13
             Layout.alignment: Qt.AlignVCenter
         }
