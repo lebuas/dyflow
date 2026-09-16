@@ -1,6 +1,5 @@
 import QtQuick 2.15
 import QtQuick.Layouts 1.15
-import "../components" as Components
 
 Item {
     id: root
@@ -15,33 +14,57 @@ Item {
         anchors.rightMargin: 16
         spacing: 8
 
-        Components.SearchBar {
-            id: searchBar
+        TextField {
+            id: searchField
             Layout.fillWidth: true
             Layout.alignment: Qt.AlignVCenter
-            onTextChanged: function(text) { root.searchChanged(text) }
+            placeholderText: "Search notes, snippets, tasks..."
+            placeholderTextColor: "#6b7280"
+            color: "#e5e7eb"
+            font.pixelSize: 14
+            leftPadding: 36
+            height: 40
+
+            background: Rectangle {
+                radius: 8
+                color: "#1f2937"
+                border.color: searchField.activeFocus ? "#6366f1" : "#374151"
+                border.width: 1
+
+                Image {
+                    source: "../resorces/icons/search.svg"
+                    width: 16
+                    height: 16
+                    anchors.left: parent.left
+                    anchors.leftMargin: 12
+                    anchors.verticalCenter: parent.verticalCenter
+                    opacity: 0.5
+                }
+            }
+
+            onTextChanged: root.searchChanged(text)
         }
 
-        Rectangle {
+        Item {
             Layout.alignment: Qt.AlignVCenter
-            width: row.implicitWidth + 16
+            width: aiRow.implicitWidth + 16
             height: 40
-            color: "transparent"
 
             Row {
-                id: row
+                id: aiRow
                 anchors.centerIn: parent
                 spacing: 6
 
-                Components.Icon {
+                Image {
                     source: "../resorces/icons/ia.svg"
-                    size: 16
+                    width: 16
+                    height: 16
                     anchors.verticalCenter: parent.verticalCenter
                 }
 
                 Text {
                     text: "Ask AI"
-                    color: mouseArea.containsMouse ? "#ffffff" : "#a78bfa"
+                    color: aiMouse.containsMouse ? "#ffffff" : "#a78bfa"
                     font.pixelSize: 13
                     font.bold: true
                     anchors.verticalCenter: parent.verticalCenter
@@ -49,7 +72,7 @@ Item {
             }
 
             MouseArea {
-                id: mouseArea
+                id: aiMouse
                 anchors.fill: parent
                 hoverEnabled: true
                 cursorShape: Qt.PointingHandCursor
