@@ -33,7 +33,7 @@ Item {
                 border.width: 1
 
                 Image {
-                    source: "../resorces/icons/search.svg"
+                    source: "resorces/icons/search.svg"
                     width: 16
                     height: 16
                     anchors.left: parent.left
@@ -57,7 +57,7 @@ Item {
                 spacing: 6
 
                 Image {
-                    source: "../resorces/icons/ia.svg"
+                    source: "resorces/icons/ia.svg"
                     width: 16
                     height: 16
                     anchors.verticalCenter: parent.verticalCenter
