@@ -18,10 +18,9 @@ TextField {
         border.color: root.activeFocus ? "#6366f1" : "#374151"
         border.width: 1
 
-        Image {
+        Icon {
             source: "../resorces/icons/search.svg"
-            width: 16
-            height: 16
+            size: 16
             anchors.left: parent.left
             anchors.leftMargin: 12
             anchors.verticalCenter: parent.verticalCenter

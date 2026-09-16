@@ -20,10 +20,8 @@ Rectangle {
         anchors.rightMargin: 12
         spacing: 10
 
-        Image {
+        Icon {
             source: root.icon
-            width: 18
-            height: 18
             anchors.verticalCenter: parent.verticalCenter
         }
 
