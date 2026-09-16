@@ -17,7 +17,7 @@ class Snippet:
     title: str = ""
     content: str = ""
     language: str = ""
-    tags: list[str] = field(default_factory=list)
+    tags: list[dict[str,str]] = field(default_factory=list)
     copy_count: int = 0
     created_at: str = ""
 
@@ -37,9 +37,12 @@ class Workflow:
     id: str = ""
     name: str = ""
     description: str = ""
-    steps: list[dict] = field(default_factory=list)
+    steps: list[dict:] = field(default_factory=list)
     active: bool = True
     created_at: str = ""
+    def comprar(self):
+       pass
+
 
 
 @dataclass
