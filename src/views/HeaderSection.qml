@@ -1,6 +1,7 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
+import "components" as Components
 
 Item {
     id: root
@@ -32,10 +33,9 @@ Item {
                 border.color: searchField.activeFocus ? "#6366f1" : "#374151"
                 border.width: 1
 
-                Image {
+                Components.Icon {
                     source: "resorces/icons/search.svg"
-                    width: 16
-                    height: 16
+                    size: 16
                     anchors.left: parent.left
                     anchors.leftMargin: 12
                     anchors.verticalCenter: parent.verticalCenter
@@ -56,10 +56,9 @@ Item {
                 anchors.centerIn: parent
                 spacing: 6
 
-                Image {
+                Components.Icon {
                     source: "resorces/icons/ia.svg"
-                    width: 16
-                    height: 16
+                    size: 16
                     anchors.verticalCenter: parent.verticalCenter
                 }
 
