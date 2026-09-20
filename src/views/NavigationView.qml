@@ -9,6 +9,12 @@ Item {
     property string workspaceTitle: "PROJECTS"
     property string settingsTitle: "SUPPORT"
     property string activeItem: ""
+    property string recentCount: "18"
+    property string notesCount: "12"
+    property string snippetsCount: "8"
+    property string tasksCount: "5"
+    property string workflowCount: "3"
+    property string scriptsCount: "4"
 
     signal itemClicked(string item)
 
@@ -37,6 +43,8 @@ Item {
                     itemId: "recent"
                     icon: "recents"
                     text: "Recent"
+                    metadataCount: root.recentCount
+                    showMetadata: true
                     active: root.activeItem === "recent"
                     Layout.fillWidth: true
                     onClicked: root.selectItem(itemId)
@@ -56,6 +64,8 @@ Item {
                     itemId: "notes"
                     icon: "notes"
                     text: "Notes"
+                    metadataCount: root.notesCount
+                    showMetadata: true
                     active: root.activeItem === "notes"
                     Layout.fillWidth: true
                     onClicked: root.selectItem(itemId)
@@ -66,6 +76,8 @@ Item {
                     itemId: "snippets"
                     icon: "snippets"
                     text: "Snippets"
+                    metadataCount: root.snippetsCount
+                    showMetadata: true
                     active: root.activeItem === "snippets"
                     Layout.fillWidth: true
                     onClicked: root.selectItem(itemId)
@@ -76,6 +88,8 @@ Item {
                     itemId: "tasks"
                     icon: "task"
                     text: "Tasks"
+                    metadataCount: root.tasksCount
+                    showMetadata: true
                     active: root.activeItem === "tasks"
                     Layout.fillWidth: true
                     onClicked: root.selectItem(itemId)
@@ -86,6 +100,8 @@ Item {
                     itemId: "workflow"
                     icon: "workflow"
                     text: "Workflows"
+                    metadataCount: root.workflowCount
+                    showMetadata: true
                     active: root.activeItem === "workflow"
                     Layout.fillWidth: true
                     onClicked: root.selectItem(itemId)
@@ -96,6 +112,8 @@ Item {
                     itemId: "scripts"
                     icon: "scrip"
                     text: "Scripts"
+                    metadataCount: root.scriptsCount
+                    showMetadata: true
                     active: root.activeItem === "scripts"
                     Layout.fillWidth: true
                     onClicked: root.selectItem(itemId)
