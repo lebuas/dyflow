@@ -5,16 +5,41 @@ import "components" as Components
 
 Item {
     id: root
+    width: parent.width
     height: 44
 
     signal searchChanged(string text)
     signal askAiClicked()
 
+    Rectangle {
+        id: headerBackground
+        anchors.fill: parent
+        color: "#111827"
+        radius: 11
+    }
+
+    Rectangle {
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.top: parent.top
+        anchors.bottom: parent.bottom
+        anchors.topMargin: 11
+        color: "#111827"
+    }
+
+
     RowLayout {
         anchors.fill: parent
         anchors.leftMargin: 16
         anchors.rightMargin: 16
-        spacing: 8
+        spacing: 12
+
+        Components.Icon {
+            icon: "search"
+            size: 16
+            opacity: 0.5
+            Layout.alignment: Qt.AlignVCenter
+        }
 
         TextField {
             id: searchField
@@ -24,67 +49,53 @@ Item {
             placeholderTextColor: "#6b7280"
             color: "#e5e7eb"
             font.pixelSize: 14
-            leftPadding: 36
-            height: 40
+            leftPadding: 12
+            rightPadding: 12
 
             background: Rectangle {
                 radius: 8
-                color: "#1f2937"
-                border.color: searchField.activeFocus ? "#6366f1" : "#374151"
-                border.width: 1
-
-                Components.Icon {
-                    source: "resorces/icons/search.svg"
-                    size: 16
-                    anchors.left: parent.left
-                    anchors.leftMargin: 12
-                    anchors.verticalCenter: parent.verticalCenter
-                    opacity: 0.5
-                }
+                color: "transparent"
+                border.width: 0 // Aseguramos que el fondo transparente no dibuje nada
             }
 
             onTextChanged: root.searchChanged(text)
         }
 
-        Item {
+        Button {
+            id: aiButton
             Layout.alignment: Qt.AlignVCenter
-            width: aiRow.implicitWidth
-            height: 44
+            Layout.preferredWidth: contentItem.implicitWidth
+            Layout.preferredHeight: contentItem.implicitHeight
+            flat: true
+            padding: 0
 
-            Row {
-                id: aiRow
-                anchors.centerIn: parent
-                spacing: 6
-
-                Components.Icon {
-                    source: "resorces/icons/ia.svg"
-                    size: 16
-                    anchors.verticalCenter: parent.verticalCenter
-                }
-
-                Text {
-                    text: "Ask AI"
-                    color: aiMouse.containsMouse ? "#ffffff" : "#a78bfa"
-                    font.pixelSize: 13
-                    font.bold: true
-                    anchors.verticalCenter: parent.verticalCenter
-                }
-            }
-
-            MouseArea {
-                id: aiMouse
-                anchors.fill: parent
-                hoverEnabled: true
+            HoverHandler {
                 cursorShape: Qt.PointingHandCursor
-                onClicked: root.askAiClicked()
             }
+
+            background: Item {}
+
+            contentItem: Components.Icon {
+                icon: "ia"
+                text: "Ask AI"
+                size: 16
+                textPixelSize: 13
+                active: aiButton.hovered
+                activeTextColor: "#ffffff"
+                inactiveTextColor: "#9ca3af"
+            }
+
+            onClicked: root.askAiClicked()
         }
+
     }
 
     Rectangle {
+        id: separator
+        anchors.left: parent.left
+        anchors.right: parent.right
         anchors.bottom: parent.bottom
-        width: parent.width
         height: 1
-        color: "#2a2b36"
+        color: "#374151"
     }
 }
