@@ -38,7 +38,7 @@ Item {
                 Layout.fillWidth: true
                 spacing: 4
 
-                Components.NavigationItem {
+                Components.NavigationButton {
                     id: recentItem
                     itemId: "recent"
                     icon: "recents"
@@ -59,7 +59,7 @@ Item {
                 Layout.fillWidth: true
                 spacing: 4
 
-                Components.NavigationItem {
+                Components.NavigationButton {
                     id: notesItem
                     itemId: "notes"
                     icon: "notes"
@@ -71,7 +71,7 @@ Item {
                     onClicked: root.selectItem(itemId)
                 }
 
-                Components.NavigationItem {
+                Components.NavigationButton {
                     id: snippetsItem
                     itemId: "snippets"
                     icon: "snippets"
@@ -83,7 +83,7 @@ Item {
                     onClicked: root.selectItem(itemId)
                 }
 
-                Components.NavigationItem {
+                Components.NavigationButton {
                     id: taskItem
                     itemId: "tasks"
                     icon: "task"
@@ -95,7 +95,7 @@ Item {
                     onClicked: root.selectItem(itemId)
                 }
 
-                Components.NavigationItem {
+                Components.NavigationButton {
                     id: workflowItem
                     itemId: "workflow"
                     icon: "workflow"
@@ -107,7 +107,7 @@ Item {
                     onClicked: root.selectItem(itemId)
                 }
 
-                Components.NavigationItem {
+                Components.NavigationButton {
                     id: scriptItem
                     itemId: "scripts"
                     icon: "scrip"
@@ -128,7 +128,7 @@ Item {
                 Layout.fillWidth: true
                 spacing: 4
 
-                Components.NavigationItem {
+                Components.NavigationButton {
                     id: settingItem
                     itemId: "setting"
                     icon: "setting"
@@ -138,7 +138,7 @@ Item {
                     onClicked: root.selectItem(itemId)
                 }
 
-                Components.NavigationItem {
+                Components.NavigationButton {
                     id: suggestionsItem
                     itemId: "seggestions"
                     icon: "seggestions"
@@ -148,7 +148,7 @@ Item {
                     onClicked: root.selectItem(itemId)
                 }
 
-                Components.NavigationItem {
+                Components.NavigationButton {
                     id: problemItem
                     itemId: "problem"
                     icon: "problem"
