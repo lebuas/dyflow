@@ -139,11 +139,11 @@ Item {
                 }
 
                 Components.NavigationButton {
-                    id: suggestionsItem
-                    itemId: "seggestions"
-                    icon: "seggestions"
-                    text: "Suggestions"
-                    active: root.activeItem === "seggestions"
+                    id: keymapsItem
+                    itemId: "keymaps"
+                    icon: "keymaps"
+                    text: "Keymaps"
+                    active: root.activeItem === "keymaps"
                     Layout.fillWidth: true
                     onClicked: function(itemId) { root.selectItem(itemId) }
                 }

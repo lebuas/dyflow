@@ -30,6 +30,7 @@ Item {
                 id: notesTree
                 Layout.fillWidth: true
                 Layout.fillHeight: true
+                Layout.topMargin: 8
                 selectedNoteId: root.selectedNoteId
 
                 onNoteSelected: function(noteId, title, content) {

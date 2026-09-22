@@ -25,6 +25,7 @@ Item {
             Layout.preferredWidth: 190
             Layout.fillWidth: !root.previewVisible
             Layout.fillHeight: true
+            Layout.topMargin: 8
             selectedSnippetId: root.selectedSnippetId
 
             onSnippetSelected: function(snippetId, title, content) {

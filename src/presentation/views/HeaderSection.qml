@@ -5,6 +5,7 @@ import "components" as Components
 
 Item {
     id: root
+    property string searchPlaceholder: "Search notes, snippets, tasks..."
     width: parent.width
     height: 44
     signal searchChanged(string text)
@@ -12,7 +13,7 @@ Item {
 
     RowLayout {
         anchors.fill: parent
-        anchors.leftMargin: 4
+        anchors.leftMargin: 8
         anchors.rightMargin: 12
         spacing: 4
 
@@ -20,10 +21,11 @@ Item {
             id: searchField
             Layout.fillWidth: true
             Layout.alignment: Qt.AlignVCenter
-            placeholderText: "Search notes, snippets, tasks..."
+            placeholderText: root.searchPlaceholder
             placeholderTextColor: "#6b7280"
             color: "#e5e7eb"
             font.pixelSize: 14
+            leftPadding: 0
             rightPadding: 12
 
             background: Rectangle {

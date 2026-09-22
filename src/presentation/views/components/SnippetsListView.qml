@@ -32,22 +32,12 @@ Item {
         anchors.fill: parent
         spacing: 8
 
-        NavigationButton {
-            itemId: "snippets"
-            icon: "snippets"
-            text: "Snippets"
-            active: true
-            activeColor: "#ffffff"
-            inactiveColor: "#ffffff"
-            Layout.fillWidth: true
-        }
-
         ListView {
             id: snippetsList
             Layout.fillWidth: true
             Layout.fillHeight: true
             clip: true
-            spacing: 2
+            spacing: 0
             model: snippetsModel
 
             delegate: ItemDelegate {
@@ -57,23 +47,20 @@ Item {
                 required property string content
 
                 width: snippetsList.width
-                height: 30
+                height: 24
                 padding: 0
-                leftPadding: 8
+                leftPadding: 0
                 rightPadding: 4
                 hoverEnabled: true
                 highlighted: root.selectedSnippetId === snippetId
 
                 background: Item {}
 
-                contentItem: Text {
-                    text: snippetDelegate.title
-                    color: snippetDelegate.hovered || snippetDelegate.highlighted
-                        ? "#ffffff"
-                        : "#9ca3af"
-                    font.pixelSize: 13
-                    elide: Text.ElideRight
-                    verticalAlignment: Text.AlignVCenter
+                contentItem: ContentItem {
+                    icon: "snippets"
+                    name: snippetDelegate.title
+                    description: snippetDelegate.content
+                    opacity: snippetDelegate.hovered || snippetDelegate.highlighted ? 1 : 0.75
                 }
 
                 onClicked: {

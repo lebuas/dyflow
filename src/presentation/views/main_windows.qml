@@ -33,6 +33,9 @@ ApplicationWindow {
             anchors.rightMargin: 1
             anchors.topMargin: 1
             z: 1
+            searchPlaceholder: mainWindow.currentView === "notes" ? "Search Notes"
+                               : mainWindow.currentView === "snippets" ? "Search Snippets"
+                               : "Search notes, snippets, tasks..."
             onSearchChanged: function(text) { console.log("Search:", text) }
             onAskAiClicked: console.log("Ask AI clicked")
         }

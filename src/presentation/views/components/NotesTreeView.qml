@@ -54,22 +54,12 @@ Item {
         anchors.margins: 0
         spacing: 8
 
-        NavigationButton {
-            itemId: "notes"
-            icon: "notes"
-            text: "Notes"
-            active: true
-            activeColor: "#ffffff"
-            inactiveColor: "#ffffff"
-            Layout.fillWidth: true
-        }
-
         ListView {
             id: treeList
             Layout.fillWidth: true
             Layout.fillHeight: true
             clip: true
-            spacing: 2
+            spacing: 0
             model: notesModel
 
             delegate: Item {
@@ -79,7 +69,7 @@ Item {
                 required property string content
 
                 width: treeList.width
-                height: 30
+                height: 24
 
                 Rectangle {
                     anchors.fill: parent
@@ -89,7 +79,7 @@ Item {
 
                 RowLayout {
                     anchors.fill: parent
-                    anchors.leftMargin: kind === "folder" ? 8 : 24
+                    anchors.leftMargin: kind === "folder" ? 0 : 0
                     anchors.rightMargin: 4
                     spacing: 6
 
@@ -97,13 +87,21 @@ Item {
                         text: kind === "folder" ? "▾" : "•"
                         color: "#9ca3af"
                         font.pixelSize: 12
+                        visible: kind === "folder"
+                    }
+
+                    ContentItem {
+                        visible: kind === "note"
+                        icon: "notes"
+                        name: title
+                        description: content
+                        Layout.fillWidth: true
                     }
 
                     Text {
+                        visible: kind === "folder"
                         text: title
-                        color: noteMouse.containsMouse || root.selectedNoteId === noteId
-                            ? "#ffffff"
-                            : "#9ca3af"
+                        color: "#9ca3af"
                         font.pixelSize: 13
                         elide: Text.ElideRight
                         Layout.fillWidth: true

@@ -10,6 +10,7 @@ Item {
     property bool active: false
     property color activeTextColor: "#ffffff"
     property color inactiveTextColor: "#6b7280"
+    property color imageColor: "transparent"
 
     property var icons: ({
             "search": Qt.resolvedUrl("../resorces/icons/search.svg"),
@@ -20,7 +21,7 @@ Item {
             "recents": Qt.resolvedUrl("../resorces/icons/recents.svg"),
             "snippets": Qt.resolvedUrl("../resorces/icons/snippets.svg"),
             "task": Qt.resolvedUrl("../resorces/icons/task.svg"),
-            "seggestions": Qt.resolvedUrl("../resorces/icons/seggestions.svg"),
+            "keymaps": Qt.resolvedUrl("../resorces/icons/keymaps.svg"),
             "workflow": Qt.resolvedUrl("../resorces/icons/workflow.svg"),
             "setting": Qt.resolvedUrl("../resorces/icons/setting.svg")
         })
@@ -37,6 +38,7 @@ Item {
         width: root.size
         height: root.size
         source: root.icon ? root.icons[root.icon] : ""
+        color: root.imageColor
         sourceSize: Qt.size(root.size, root.size)
         smooth: true
         mipmap: true
