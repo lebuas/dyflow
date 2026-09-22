@@ -47,7 +47,7 @@ Item {
                     showMetadata: true
                     active: root.activeItem === "recent"
                     Layout.fillWidth: true
-                    onClicked: root.selectItem(itemId)
+                    onClicked: function(itemId) { root.selectItem(itemId) }
                 }
             }
         }
@@ -68,7 +68,7 @@ Item {
                     showMetadata: true
                     active: root.activeItem === "notes"
                     Layout.fillWidth: true
-                    onClicked: root.selectItem(itemId)
+                    onClicked: function(itemId) { root.selectItem(itemId) }
                 }
 
                 Components.NavigationButton {
@@ -80,7 +80,7 @@ Item {
                     showMetadata: true
                     active: root.activeItem === "snippets"
                     Layout.fillWidth: true
-                    onClicked: root.selectItem(itemId)
+                    onClicked: function(itemId) { root.selectItem(itemId) }
                 }
 
                 Components.NavigationButton {
@@ -92,7 +92,7 @@ Item {
                     showMetadata: true
                     active: root.activeItem === "tasks"
                     Layout.fillWidth: true
-                    onClicked: root.selectItem(itemId)
+                    onClicked: function(itemId) { root.selectItem(itemId) }
                 }
 
                 Components.NavigationButton {
@@ -104,7 +104,7 @@ Item {
                     showMetadata: true
                     active: root.activeItem === "workflow"
                     Layout.fillWidth: true
-                    onClicked: root.selectItem(itemId)
+                    onClicked: function(itemId) { root.selectItem(itemId) }
                 }
 
                 Components.NavigationButton {
@@ -116,7 +116,7 @@ Item {
                     showMetadata: true
                     active: root.activeItem === "scripts"
                     Layout.fillWidth: true
-                    onClicked: root.selectItem(itemId)
+                    onClicked: function(itemId) { root.selectItem(itemId) }
                 }
             }
         }
@@ -135,7 +135,7 @@ Item {
                     text: "Settings"
                     active: root.activeItem === "setting"
                     Layout.fillWidth: true
-                    onClicked: root.selectItem(itemId)
+                    onClicked: function(itemId) { root.selectItem(itemId) }
                 }
 
                 Components.NavigationButton {
@@ -145,7 +145,7 @@ Item {
                     text: "Suggestions"
                     active: root.activeItem === "seggestions"
                     Layout.fillWidth: true
-                    onClicked: root.selectItem(itemId)
+                    onClicked: function(itemId) { root.selectItem(itemId) }
                 }
 
                 Components.NavigationButton {
@@ -155,7 +155,7 @@ Item {
                     text: "Report a problem"
                     active: root.activeItem === "problem"
                     Layout.fillWidth: true
-                    onClicked: root.selectItem(itemId)
+                    onClicked: function(itemId) { root.selectItem(itemId) }
                 }
             }
         }

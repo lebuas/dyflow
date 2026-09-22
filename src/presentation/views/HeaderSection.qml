@@ -12,9 +12,9 @@ Item {
 
     RowLayout {
         anchors.fill: parent
-        anchors.leftMargin: 16
-        anchors.rightMargin: 16
-        spacing: 12
+        anchors.leftMargin: 4
+        anchors.rightMargin: 12
+        spacing: 4
 
         TextField {
             id: searchField
@@ -27,12 +27,10 @@ Item {
             rightPadding: 12
 
             background: Rectangle {
-                radius: 8
                 color: "transparent"
-                border.width: 0 // Aseguramos que el fondo transparente no dibuje nada
             }
 
-            onTextChanged: root.searchChanged(text)
+                  onTextChanged: root.searchChanged(text)
         }
 
         Components.NavigationButton {

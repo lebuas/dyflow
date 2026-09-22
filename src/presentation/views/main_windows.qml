@@ -4,6 +4,7 @@ import QtQuick.Controls
 ApplicationWindow {
     id: mainWindow
     visible: true
+    property string currentView: ""
     color: "transparent"
     width: 660
     height: 460
@@ -37,6 +38,7 @@ ApplicationWindow {
         }
 
         NavigationView {
+            visible: mainWindow.currentView === ""
             anchors.top: parent.top
             anchors.topMargin: 45
             anchors.left: parent.left
@@ -46,8 +48,32 @@ ApplicationWindow {
             anchors.rightMargin: 1
             anchors.bottomMargin: 1
             onItemClicked: function(item) {
-                console.log("Navigation item clicked:", item)
+                mainWindow.currentView = item
             }
+        }
+
+        NotesManager {
+            visible: mainWindow.currentView === "notes"
+            anchors.top: parent.top
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.bottom: parent.bottom
+            anchors.topMargin: 45
+            anchors.leftMargin: 1
+            anchors.rightMargin: 1
+            anchors.bottomMargin: 1
+        }
+
+        SnippetsManager {
+            visible: mainWindow.currentView === "snippets"
+            anchors.top: parent.top
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.bottom: parent.bottom
+            anchors.topMargin: 45
+            anchors.leftMargin: 1
+            anchors.rightMargin: 1
+            anchors.bottomMargin: 1
         }
 
         Rectangle {

@@ -11,7 +11,7 @@ def main():
     app.setOrganizationName("lebuas")
 
     engine = QQmlApplicationEngine()
-    path_views = Path(__file__).parent / "views" / "main_windows.qml"
+    path_views = Path(__file__).parent / "presentation" / "views" / "main_windows.qml"
     engine.addImportPath(str(path_views))
     engine.load(str(path_views))
 
