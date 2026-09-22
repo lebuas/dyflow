@@ -1,4 +1,5 @@
 import QtQuick 2.15
+import QtQuick.Controls.impl 2.15
 
 Item {
     id: root
@@ -31,7 +32,7 @@ Item {
     implicitWidth: width
     implicitHeight: height
 
-    Image {
+    ColorImage {
         id: iconImage
         width: root.size
         height: root.size
