@@ -1,3 +1,4 @@
+// Preview panel displaying the selected note title and content.
 import QtQuick 2.15
 import QtQuick.Layouts 1.15
 
@@ -20,7 +21,7 @@ Item {
 
         Text {
             text: root.noteTitle.length > 0 ? root.noteTitle : "Select a note"
-            color: "#f3f4f6"
+            color: "#B8C0DC"
             font.pixelSize: 20
             font.bold: true
             Layout.fillWidth: true

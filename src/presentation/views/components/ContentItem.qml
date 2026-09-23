@@ -1,3 +1,4 @@
+// Compact content row with an icon, name, and hidden description.
 import QtQuick 2.15
 import QtQuick.Layouts 1.15
 
@@ -31,7 +32,7 @@ Item {
 
             Text {
                 text: root.name
-                color: "#ffffff"
+                color: "#B8C0DC"
                 font.pixelSize: 13
                 elide: Text.ElideRight
                 Layout.fillWidth: true

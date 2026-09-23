@@ -1,3 +1,4 @@
+// Notes workspace combining the notes tree and its selected-note preview.
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15

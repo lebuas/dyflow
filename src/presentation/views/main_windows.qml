@@ -1,3 +1,4 @@
+// Main application window that switches between navigation, notes, and snippets.
 import QtQuick
 import QtQuick.Controls
 

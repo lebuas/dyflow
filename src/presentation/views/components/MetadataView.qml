@@ -1,3 +1,4 @@
+// Navigation metadata label showing an item count and descriptor.
 import QtQuick 2.15
 
 Item {
@@ -7,8 +8,8 @@ Item {
     property string name: ""
     property bool active: false
     property bool hovered: false
-    property color activeColor: "#ffffff"
-    property color inactiveColor: "#9ca3af"
+    property color activeColor: "#B8C0DC"
+    property color inactiveColor: "#B8C0DC"
 
     implicitWidth: metadataText.implicitWidth
     implicitHeight: metadataText.implicitHeight

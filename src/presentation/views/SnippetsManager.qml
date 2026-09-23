@@ -1,3 +1,4 @@
+// Snippets workspace combining the snippets list and its selected-snippet preview.
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
@@ -15,17 +16,16 @@ Item {
 
     RowLayout {
         anchors.fill: parent
-        anchors.leftMargin: 8
-        anchors.rightMargin: 8
+        anchors.leftMargin: 0
+        anchors.rightMargin: 0
         anchors.bottomMargin: 0
-        spacing: 12
+        spacing: 0
 
         Components.SnippetsListView {
             id: snippetsList
             Layout.preferredWidth: 190
             Layout.fillWidth: !root.previewVisible
             Layout.fillHeight: true
-            Layout.topMargin: 8
             selectedSnippetId: root.selectedSnippetId
 
             onSnippetSelected: function(snippetId, title, content) {
@@ -52,11 +52,4 @@ Item {
         }
     }
 
-    ToolButton {
-        anchors.top: parent.top
-        anchors.right: parent.right
-        text: root.previewVisible ? "Hide preview" : "Show preview"
-        z: 1
-        onClicked: root.previewVisible = !root.previewVisible
-    }
 }

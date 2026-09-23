@@ -1,3 +1,4 @@
+// Reusable navigation button with icon, label, active state, and click signal.
 import QtQuick 2.15
 import QtQuick.Layouts 1.15
 
@@ -10,8 +11,8 @@ Item {
     property string metadataCount: ""
     property bool showMetadata: false
     property bool active: false
-    property color activeColor: "#ffffff"
-    property color inactiveColor: "#9ca3af"
+    property color activeColor: "#B8C0DC"
+    property color inactiveColor: "#B8C0DC"
 
     signal clicked(string itemId)
 
@@ -39,7 +40,6 @@ Item {
         Icon {
             icon: root.icon
             size: 16
-            opacity: root.active ? 1 : 0.65
             Layout.alignment: Qt.AlignVCenter
         }
 

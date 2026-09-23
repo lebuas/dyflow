@@ -1,3 +1,4 @@
+// Selectable flat list containing the available snippets.
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
@@ -30,14 +31,16 @@ Item {
 
     ColumnLayout {
         anchors.fill: parent
-        spacing: 8
+        anchors.leftMargin: 8
+        anchors.topMargin: 8
+        spacing: 0
 
         ListView {
             id: snippetsList
             Layout.fillWidth: true
             Layout.fillHeight: true
             clip: true
-            spacing: 0
+            spacing: 8
             model: snippetsModel
 
             delegate: ItemDelegate {
@@ -54,13 +57,22 @@ Item {
                 hoverEnabled: true
                 highlighted: root.selectedSnippetId === snippetId
 
-                background: Item {}
+                background: Rectangle {
+                    color: snippetDelegate.hovered || snippetDelegate.highlighted
+                        ? "#141820"
+                        : "transparent"
+                    radius: 4
+                }
 
-                contentItem: ContentItem {
-                    icon: "snippets"
-                    name: snippetDelegate.title
-                    description: snippetDelegate.content
-                    opacity: snippetDelegate.hovered || snippetDelegate.highlighted ? 1 : 0.75
+                contentItem: Item {
+                    ContentItem {
+                        anchors.left: parent.left
+                        anchors.right: parent.right
+                        anchors.verticalCenter: parent.verticalCenter
+                        icon: "snippets"
+                        name: snippetDelegate.title
+                        description: snippetDelegate.content
+                    }
                 }
 
                 onClicked: {

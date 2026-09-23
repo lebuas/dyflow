@@ -1,3 +1,4 @@
+// Main navigation panel for selecting an application section.
 import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import "components" as Components
@@ -169,7 +170,7 @@ Item {
 
         Text {
             text: section.title
-            color: "#6b7280"
+            color: "#B8C0DC"
             font.pixelSize: 11
             font.bold: true
             Layout.fillWidth: true

@@ -1,3 +1,4 @@
+// Header with the global search field and the Ask AI action.
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15

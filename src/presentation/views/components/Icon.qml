@@ -1,3 +1,4 @@
+// Reusable icon and optional text label component.
 import QtQuick 2.15
 import QtQuick.Controls.impl 2.15
 
